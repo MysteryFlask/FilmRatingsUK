@@ -18,7 +18,7 @@ async def on_message(message):
 
 
         # Fetch data from IMDb API
-        imdb_api_url = "https://imdb-api.com/en/API/SearchSeries/k_onigfri1/" + query
+        imdb_api_url = "https://imdb-api.com/en/API/SearchSeries/IMDBAPIKEY/" + query # SEE BELOW!
         imdb_api_response = requests.get(imdb_api_url)
         imdb_api_data = imdb_api_response.json()
         
@@ -37,8 +37,8 @@ async def on_message(message):
             imdb_year_final += "Ongoing"
             
         # Fetch Rotten Tomatoes data from IMDb API
-        rt_api_url = f"https://imdb-api.com/en/API/Ratings/k_onigfri1/{imdb_id}"
-        rt_api_response = requests.get(rt_api_url)
+        rt_api_url = f"https://imdb-api.com/en/API/Ratings/IMDBAPIKEY/{imdb_id}" # Register here and replace with your API key: https://is.gd/zFPr0C
+        rt_api_response = requests.get(rt_api_url)                               # No quotes, simply replace 'IMDBAPIKEY'.
         rt_api_data = rt_api_response.json()
         
         rt_critics_score = rt_api_data['rottenTomatoes']
