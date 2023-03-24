@@ -5,7 +5,7 @@ A complex Discord bot that retrieves UK unofficial age ratings and data about fi
 
 Firstly, make sure Python is installed. For a guide on how to do this, go to https://realpython.com/installing-python/.
 
-Then, install the requires modules for Python, here is the list: import discord, import requests, from bs4 import BeautifulSoup, import re, import asyncio.
+Then, install the required modules for Python, here is the list: import discord, import requests, from bs4 import BeautifulSoup, import re, import asyncio.
 
 Next, download the main.py file from this repository, and note down where it is being stored on your computer.
 
