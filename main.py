@@ -16,7 +16,6 @@ async def on_message(message):
         else:
           query = query.replace(" ", "+")
 
-
         # Fetch data from IMDb API
         imdb_api_url = "https://imdb-api.com/en/API/SearchSeries/IMDBAPIKEY/" + query # SEE BELOW!
         imdb_api_response = requests.get(imdb_api_url)
@@ -107,7 +106,6 @@ async def on_message(message):
             reaction_ctx = await client.wait_for("reaction_add", check=lambda reaction, user: user == message.author and str(reaction.emoji) in ['✅', '📽'], timeout=20)
         
             if str(reaction_ctx[0].emoji) == '✅':
-                # User wants to know the categories
                 buttonpage = "https://www.commonsensemedia.org" + result_link
                 buttonresponse = requests.get(buttonpage)
                 buttonsoup = BeautifulSoup(buttonresponse.content, 'html.parser')
@@ -145,7 +143,6 @@ async def on_message(message):
 
                 await message.channel.send(embed=embed)
                 await category_message.delete()
-            # Find the trailer link and send it.
             elif str(reaction_ctx[0].emoji) == '📽':
                 url = 'https://www.googleapis.com/youtube/v3/search'
                 params = {
